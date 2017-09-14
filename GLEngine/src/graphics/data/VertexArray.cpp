@@ -1,14 +1,16 @@
 #include "VertexArray.h"
 
 
-VertexArray::VertexArray(const GLfloat *verticesData, GLuint arrayLength, const GLuint nAttribs, 
-    const GLuint* attribsNComponents, const GLuint strideInBytes, const GLuint *offsets)
+VertexArray::VertexArray(const GLfloat *verticesData, GLuint verticesLength, const GLuint nAttribs,
+    const GLuint* attribsNComponents, const GLuint strideInBytes, const GLuint *offsets, 
+    const GLuint *indices, const GLuint indicesLength)
 {
     glGenVertexArrays(2, &m_vaoID);
     glGenBuffers(1, &m_vboID[0]);
+    //glGenBuffers(1, &m_eboID);
     glBindVertexArray(m_vaoID);
     glBindBuffer(GL_ARRAY_BUFFER, m_vboID[0]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*arrayLength, verticesData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*verticesLength, verticesData, GL_STATIC_DRAW);
     
     for (int i = 0; i < nAttribs; i++)
     {
@@ -17,8 +19,12 @@ VertexArray::VertexArray(const GLfloat *verticesData, GLuint arrayLength, const 
 
     }
     
+    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_eboID);
+    //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint)*indicesLength, indices, GL_STATIC_DRAW);
+
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
+    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
 
@@ -26,6 +32,7 @@ VertexArray::~VertexArray()
 {
     glDeleteVertexArrays(1, &m_vaoID);
     glDeleteBuffers(1, &m_vboID[0]);
+    //glDeleteBuffers(1, &m_eboID);
     std::cout << "Deleted VAO!\n";
 }
 

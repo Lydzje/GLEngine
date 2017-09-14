@@ -9,8 +9,9 @@
 class VertexArray
 {
 public:
-    VertexArray(const GLfloat *verticesData, GLuint arrayLength, const GLuint nAttribs, 
-        const GLuint* attribsNComponents, const GLuint stride, const GLuint *offsets);
+    VertexArray(const GLfloat *verticesData, GLuint verticesLength, const GLuint nAttribs, 
+        const GLuint* attribsNComponents, const GLuint stride, const GLuint *offsets,
+        const GLuint *indices, const GLuint indicesLength);
     ~VertexArray();
 
     void bind() const;
@@ -23,6 +24,7 @@ public:
 private:
     GLuint m_vaoID;
     GLuint m_vboID[2];
+    GLuint m_eboID;
 };
 
 #endif // !VAO_H

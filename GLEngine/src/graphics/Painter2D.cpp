@@ -32,6 +32,7 @@ void Painter2D::draw() const
         }
         m_shader->setMat4("model", e->getModelMatrix());
         glDrawArrays(GL_TRIANGLES, 0, 6);
+        //glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     }
 }
 
@@ -47,11 +48,23 @@ bool Painter2D::init()
         -0.5f, -0.5f, 0, 0,
         -0.5f,  0.5f, 0, 1,
          0.5f,  0.5f, 1, 1
+
+        /*-0.5f,  0.5f, 0, 1,
+         0.5f,  0.5f, 1, 1,
+         0.5f, -0.5f, 1, 0,
+        -0.5f, -0.5f, 0, 0,*/
+
+    };
+
+    GLuint indices[] =
+    {
+        0, 1, 2,
+        0, 3, 2
     };
 
     GLuint attribsNComponents[]{ 2, 2 };
     GLuint offsets[]{ 0, sizeof(GLfloat)*2 };
-    m_vao = new VertexArray{ verticesData, 24, 2, attribsNComponents, sizeof(GLfloat)*4, offsets };
+    m_vao = new VertexArray{ verticesData, 24, 2, attribsNComponents, sizeof(GLfloat)*4, offsets, indices, 6 };
     m_shader = new Shader("res\\shaders\\2d.vert", "res\\shaders\\2d.frag");
 
     m_vao->bind();

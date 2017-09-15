@@ -65,3 +65,4 @@
 
 
 *.c linguist-vendored=true
+*.h linguist-vendored=true

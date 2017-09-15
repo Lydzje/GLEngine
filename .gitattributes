@@ -64,5 +64,5 @@
 
 
 
-*.c linguist-vendored=true
-*.h linguist-vendored=true
+#*.c linguist-vendored=true
+#*.h linguist-vendored=true

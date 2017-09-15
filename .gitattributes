@@ -61,3 +61,8 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+
+
+GLEngine/src/utils/glad.c linguist-vendored=true
+GLEngine/src/utils/stb_image.h linguist-vendored=true

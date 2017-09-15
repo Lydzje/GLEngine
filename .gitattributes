@@ -62,3 +62,7 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
+
+
+#glad.c linguist-vendored=true
+#stb_image.h linguist-vendored=true

@@ -63,5 +63,5 @@
 #*.RTF   diff=astextplain
 
 
-* linguist-vendored
+
 *.c linguist-vendored=true

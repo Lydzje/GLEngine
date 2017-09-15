@@ -1,17 +1,17 @@
 #include "Shader.h"
 
+#include <iostream>
+
 
 Shader::Shader(const char * vpath, const char * fpath)
-    : m_id(Loader::loadShader(vpath, fpath))
+    : m_id(Loader::load_shader(vpath, fpath))
 {
 }
-
 
 Shader::~Shader()
 {
     std::cout << "Shader deleted!\n";
 }
-
 
 void Shader::use() const
 {

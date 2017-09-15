@@ -1,19 +1,13 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-#include <glad\glad.h>
-#include "stb_image.h"
-
-#include <string>
-#include <fstream>
-#include <sstream>
-#include <iostream>
 
 class Loader
 {
 public:
-    static GLuint loadShader(const char* vpath, const char* fpath);
-    static GLuint loadTexture2D(const char* path, int& width, int& height);
+    static unsigned int load_shader(const char* vpath, const char* fpath);
+    static unsigned int load_texture2D(const char* path);
+    static unsigned char* load_image(const char* path, int& width, int& height, bool flip = true);
 private:
     Loader() {};
     ~Loader() {};

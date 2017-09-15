@@ -1,8 +1,13 @@
 #include "Loader.h"
 
+#include <glad\glad.h>
+#include "stb_image.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
-
-GLuint Loader::loadShader(const char* vpath, const char* fpath)
+unsigned int Loader::load_shader(const char* vpath, const char* fpath)
 {
     // Getting the shader source code from files
     // -----------------------------------------
@@ -76,17 +81,10 @@ GLuint Loader::loadShader(const char* vpath, const char* fpath)
     return programID;
 }
 
-GLuint Loader::loadTexture2D(const char* path, int& width, int& height)
+unsigned int Loader::load_texture2D(const char* path)
 {
-    stbi_set_flip_vertically_on_load(true);
-
-    int nChannels;
-    unsigned char* data = stbi_load(path, &width, &height, &nChannels, 0);
-    std::cout << "Loading " << path;
-    if (!data)
-        std::cout << " FAILED!\n";
-    else 
-        std::cout << " SUCCEDED!\n";
+    int width, height;
+    unsigned char* data = load_image(path, width, height);
 
     GLuint textureID;
     glGenTextures(1, &textureID);
@@ -100,4 +98,19 @@ GLuint Loader::loadTexture2D(const char* path, int& width, int& height)
     stbi_image_free(data);
 
     return textureID;
+}
+
+unsigned char* Loader::load_image(const char* path, int& width, int& height, bool flip)
+{
+    stbi_set_flip_vertically_on_load(flip);
+
+    int nChannels;
+    unsigned char* data = stbi_load(path, &width, &height, &nChannels, 0);
+    std::cout << "Loading " << path;
+    if (!data)
+        std::cout << " FAILED!\n";
+    else
+        std::cout << " SUCCEDED!\n";
+
+    return data;
 }

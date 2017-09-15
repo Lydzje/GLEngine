@@ -64,5 +64,5 @@
 
 
 
-#glad.c linguist-vendored=true
-#stb_image.h linguist-vendored=true
+GLEngine/src/utils/glad.c linguist-vendored=true
+GLEngine/src/utils/stb_image.h linguist-vendored=true

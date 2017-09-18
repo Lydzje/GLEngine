@@ -6,13 +6,12 @@
 class Input
 {
 public:
-    static bool isMouseButtonPressed(int button);
-    static bool isKeyPressed(int key);
-
+    static bool is_mouse_button_pressed(int button);
+    static bool is_key_pressed(int key);
 
 private:
-    static bool keys[1024];
-    static bool mouseButtons[8];
+    static bool s_keys[1024];
+    static bool s_mouseButtons[8];
 
 private:
     Input() = delete;
@@ -24,6 +23,3 @@ private:
 };
 
 #endif // !INPUT_H
-
-
-

@@ -2,6 +2,7 @@
 
 #include <glad\glad.h>
 #include <iostream>
+
 #include "../utils/Loader.h"
 
 Texture2D::Texture2D(const char* path)

@@ -3,8 +3,6 @@
 
 #include "Game.h"
 #include "graphics\Painter2D.h"
-#include "utils\Camera.h"
-#include "utils\Input.h"
 
 class Game2D : public Game
 {
@@ -22,6 +20,3 @@ private:
 };
 
 #endif // !GAME_2D_H
-
-
-

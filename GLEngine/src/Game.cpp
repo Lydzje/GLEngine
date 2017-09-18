@@ -1,12 +1,17 @@
 #include "Game.h"
 
+#include <ctime>
+#include <glad\glad.h>
+
+#include "utils\Window.h"
+
 void Game::run()
 {
     clock_t timeSinceUpd = clock();
     clock_t deltaTime{ 0 };
     unsigned int frames{ 0 };
     unsigned int updates{ 0 };
-    while (!Window::shouldClose())
+    while (!Window::should_close())
     {
         clock_t beginFrame = clock();
         if (beginFrame - timeSinceUpd >= m_msPerUpdate)

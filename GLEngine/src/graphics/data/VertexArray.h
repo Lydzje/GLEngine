@@ -1,17 +1,16 @@
 #ifndef VAO_H
 #define VAO_H
 
-#include <glad\glad.h>
-#include <iostream>
-
 #include <glm\glm.hpp>
 
 class VertexArray
 {
 public:
-    VertexArray(const GLfloat *verticesData, GLuint verticesLength, const GLuint nAttribs, 
-        const GLuint* attribsNComponents, const GLuint stride, const GLuint *offsets,
-        const GLuint *indices, const GLuint indicesLength);
+    VertexArray(const float *verticesData, unsigned int verticesLength, 
+        const unsigned int nAttribs, const unsigned int* attribsNComponents, 
+        const unsigned int strideInBytes, const unsigned int *offsets,
+        const unsigned int *indices, const unsigned int indicesLength);
+
     ~VertexArray();
 
     void bind() const;
@@ -22,12 +21,9 @@ public:
     void setBufferData(unsigned int size, glm::mat4* data);
 
 private:
-    GLuint m_vaoID;
-    GLuint m_vboID[2];
-    GLuint m_eboID;
+    unsigned int m_vaoID;
+    unsigned int m_vboID[2];
+    unsigned int m_eboID;
 };
 
 #endif // !VAO_H
-
-
-

@@ -1,5 +1,9 @@
 #include "Painter2D.h"
 
+#include <glad\glad.h>
+
+#include "../entities/Entity.h"
+#include "../utils/Camera.h"
 
 Painter2D::Painter2D(Game* canvas)
     : Painter(canvas)
@@ -17,7 +21,7 @@ Painter2D::~Painter2D()
 
 void Painter2D::prepare() const
 {
-    m_shader->setMat4("view", Camera::getViewMatrix());
+    m_shader->setMat4("view", Camera::get_view_matrix());
 }
 
 void Painter2D::draw() const
@@ -38,7 +42,7 @@ void Painter2D::draw() const
 
 bool Painter2D::init()
 {
-    GLfloat verticesData[]
+    float verticesData[]
     {
         // Positions and tex coords
          0.5f,  0.5f, 1, 1,
@@ -57,15 +61,15 @@ bool Painter2D::init()
 
     };
 
-    GLuint indices[] =
+    unsigned int indices[] =
     {
         0, 1, 2,
         0, 3, 2
     };
 
-    GLuint attribsNComponents[]{ 2, 2 };
-    GLuint offsets[]{ 0, sizeof(GLfloat)*2 };
-    m_vao = new VertexArray{ verticesData, 24, 2, attribsNComponents, sizeof(GLfloat)*4, offsets, indices, 6 };
+    unsigned int attribsNComponents[]{ 2, 2 };
+    unsigned int offsets[]{ 0, sizeof(float)*2 };
+    m_vao = new VertexArray{ verticesData, 24, 2, attribsNComponents, sizeof(float)*4, offsets, indices, 6 };
     m_shader = new Shader("res\\shaders\\2d.vert", "res\\shaders\\2d.frag");
 
     m_vao->bind();

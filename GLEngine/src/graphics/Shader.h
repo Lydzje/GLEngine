@@ -1,10 +1,6 @@
 #ifndef SHADER_H
 #define SHADER_H
 
-#include <glad\glad.h>
-
-#include "../utils/Loader.h"
-
 class Shader
 {
 public:
@@ -18,13 +14,9 @@ public:
     void setMat4(const char* name, const float* mat4) const;
     void setTexture2D(const char* name, const int unit) const;
 
-
 private:
-    GLuint m_id;
+    unsigned int m_id;
 
 };
 
 #endif // !SHADER_H
-
-
-

@@ -1,12 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <ctime>
-#include <glad\glad.h>
-
-#include "utils\Window.h"
 #include "gameplay\GameState.h"
-
 
 class Game
 {
@@ -37,6 +32,3 @@ protected:
 };
 
 #endif // !GAME_H
-
-
-

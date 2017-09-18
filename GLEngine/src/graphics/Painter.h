@@ -1,9 +1,6 @@
 #ifndef PAINTER_H
 #define PAINTER_H
 
-#include <iostream>
-#include <glad\glad.h>
-
 #include "../Game.h"
 
 class Painter
@@ -21,9 +18,7 @@ protected:
     virtual ~Painter();
 
     virtual bool init() = 0;
+
 };
 
 #endif // !PAINTER_H
-
-
-

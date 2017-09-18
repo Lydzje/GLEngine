@@ -1,16 +1,19 @@
 #include "VertexArray.h"
 
+#include <iostream>
+#include <glad\glad.h>
 
-VertexArray::VertexArray(const GLfloat *verticesData, GLuint verticesLength, const GLuint nAttribs,
-    const GLuint* attribsNComponents, const GLuint strideInBytes, const GLuint *offsets, 
-    const GLuint *indices, const GLuint indicesLength)
+VertexArray::VertexArray(const float *verticesData, unsigned int verticesLength,
+    const unsigned int nAttribs, const unsigned int* attribsNComponents,
+    const unsigned int strideInBytes, const unsigned int *offsets,
+    const unsigned int *indices, const unsigned int indicesLength)
 {
     glGenVertexArrays(2, &m_vaoID);
     glGenBuffers(1, &m_vboID[0]);
     //glGenBuffers(1, &m_eboID);
     glBindVertexArray(m_vaoID);
     glBindBuffer(GL_ARRAY_BUFFER, m_vboID[0]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*verticesLength, verticesData, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(float)*verticesLength, verticesData, GL_STATIC_DRAW);
     
     for (int i = 0; i < nAttribs; i++)
     {
@@ -26,7 +29,6 @@ VertexArray::VertexArray(const GLfloat *verticesData, GLuint verticesLength, con
     glBindVertexArray(0);
     //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
-
 
 VertexArray::~VertexArray()
 {

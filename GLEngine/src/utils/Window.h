@@ -3,14 +3,13 @@
 
 #include <GLFW\glfw3.h>
 
-
 class Window
 {
 public:
     static void createWindow(unsigned int width = 800, unsigned int height = 800, const char *title = "");
 
     static void set_icon(const char* path);
-    static bool shouldClose();// needs static method convenction
+    static bool should_close();
     static void update();
     static void destroy();
 
@@ -30,4 +29,3 @@ private:
 };
 
 #endif // !WINDOW_H
-

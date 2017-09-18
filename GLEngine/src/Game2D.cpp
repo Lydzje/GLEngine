@@ -1,5 +1,8 @@
 #include "Game2D.h"
 
+#include "utils\Camera.h"
+#include "utils\Input.h"
+
 Game2D::Game2D(unsigned int width, unsigned int height, const char * title)
     : Game(width, height, title),
     m_painter(Painter2D(this))

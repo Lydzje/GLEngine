@@ -1,7 +1,6 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-
 class Loader
 {
 public:
@@ -14,6 +13,3 @@ private:
 };
 
 #endif // !LOADER_H
-
-
-

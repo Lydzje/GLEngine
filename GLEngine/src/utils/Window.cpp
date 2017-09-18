@@ -1,9 +1,9 @@
 #include "Window.h"
 
 #include <iostream>
+
 #include "Loader.h"
 #include "Input.h"
-
 
 GLFWwindow *Window::m_glfwWindow{ nullptr };
 unsigned int Window::m_width;
@@ -40,7 +40,7 @@ void Window::set_icon(const char* path)
     glfwSetWindowIcon(m_glfwWindow, 1, icons);
 }
 
-bool Window::shouldClose()
+bool Window::should_close()
 {
     return glfwWindowShouldClose(m_glfwWindow);
 }

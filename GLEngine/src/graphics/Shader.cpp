@@ -1,7 +1,9 @@
 #include "Shader.h"
 
 #include <iostream>
+#include <glad\glad.h>
 
+#include "../utils/Loader.h"
 
 Shader::Shader(const char * vpath, const char * fpath)
     : m_id(Loader::load_shader(vpath, fpath))
@@ -37,4 +39,3 @@ void Shader::setTexture2D(const char *name, const int unit) const
 {
     glUniform1i(glGetUniformLocation(m_id, name), unit);
 }
-

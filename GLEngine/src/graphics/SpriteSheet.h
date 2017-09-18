@@ -9,14 +9,11 @@ public:
     SpriteSheet(const char* path);
     ~SpriteSheet();
 
-    inline Texture2D& getTexture2D() { return image; }
+    inline const Texture2D& getTexture2D() const { return m_image; }
 
 private:
-    Texture2D image;
+    Texture2D m_image;
 
 };
 
 #endif // !SPRITE_SHEET_H
-
-
-

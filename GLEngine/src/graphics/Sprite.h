@@ -9,7 +9,7 @@ public:
     Sprite(int x, int y, SpriteSheet& sheet);
     ~Sprite();
 
-    inline SpriteSheet& getSpriteSheet() { return m_sheet; }
+    inline SpriteSheet& getSpriteSheet() const { return m_sheet; }
 
 private:
     SpriteSheet& m_sheet;
@@ -18,7 +18,3 @@ private:
 };
 
 #endif // !SPRITE_H
-
-
-
-

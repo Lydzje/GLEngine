@@ -1,11 +1,11 @@
 #include "Loader.h"
 
 #include <glad\glad.h>
-#include "stb_image.h"
 #include <string>
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "stb_image.h"
 
 unsigned int Loader::load_shader(const char* vpath, const char* fpath)
 {

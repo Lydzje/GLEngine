@@ -7,14 +7,10 @@ public:
     Texture2D(const char* path);
     ~Texture2D();
 
-    inline unsigned int getID() { return m_id; }
+    inline unsigned int getID() const { return m_id; }
 
 private:
     unsigned int m_id;
 };
 
 #endif // !TEXTURE_2D_H
-
-
-
-

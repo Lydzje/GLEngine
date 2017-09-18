@@ -1,6 +1,7 @@
 #include "Game.h"
 
 #include <ctime>
+#include <iostream>
 #include <glad\glad.h>
 
 #include "utils\Window.h"

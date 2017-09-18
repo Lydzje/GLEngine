@@ -186,6 +186,14 @@
     <ClInclude Include="src\utils\stb_image.h" />
     <ClInclude Include="src\utils\Window.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\2d.frag" />
+    <None Include="res\shaders\2d.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\images\icon.png" />
+    <Image Include="res\images\test.jpg" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

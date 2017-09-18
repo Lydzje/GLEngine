@@ -141,4 +141,16 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="res\shaders\2d.frag" />
+    <None Include="res\shaders\2d.vert" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\images\icon.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\images\test.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

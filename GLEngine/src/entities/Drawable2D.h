@@ -8,7 +8,7 @@ class Drawable2D
 public:
     ~Drawable2D() {};
 
-    unsigned int getTexture2DID();
+    unsigned int getTexture2DID() const;
 
 protected:
     Drawable2D(Sprite* sprite);

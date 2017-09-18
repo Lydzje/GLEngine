@@ -1,6 +1,6 @@
 #include "Drawable2D.h"
 
-unsigned int Drawable2D::getTexture2DID()
+unsigned int Drawable2D::getTexture2DID() const
 {
     return m_sprite->getSpriteSheet().getTexture2D().getID();
 }

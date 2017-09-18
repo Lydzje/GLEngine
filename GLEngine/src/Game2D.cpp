@@ -1,5 +1,7 @@
 #include "Game2D.h"
 
+#include <iostream>
+
 #include "utils\Camera.h"
 #include "utils\Input.h"
 

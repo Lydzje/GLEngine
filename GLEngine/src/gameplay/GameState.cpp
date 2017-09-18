@@ -1,12 +1,11 @@
 #include "GameState.h"
 
-
+#include <iostream>
 
 GameState::GameState()
 {
     std::cout << "GameState created!\n";
 }
-
 
 GameState::~GameState()
 {

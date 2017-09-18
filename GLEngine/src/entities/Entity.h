@@ -1,11 +1,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
-#include <iostream>
 #include <vector>
-
 #include <glm\glm.hpp>
-#include <glm\gtc\matrix_transform.hpp>
 #include <glm\gtc\type_ptr.hpp>
 
 #include "Drawable2D.h"
@@ -13,7 +10,7 @@
 class Entity : public Drawable2D // TEMPORAL
 {
 public:
-    static std::vector<Entity*> entities;
+    static std::vector<Entity*> s_entities;
 
 public:
     Entity(const glm::vec3& position, const glm::vec3& rotation, const glm::vec2& scale,
@@ -33,6 +30,3 @@ private:
 };
 
 #endif // !ENTITY_H
-
-
-

@@ -3,7 +3,6 @@
 
 #include "../GameState.h"
 #include "../../graphics/Sprite.h"
-#include "../../entities/Entity.h"
 
 class TestScene : public GameState
 {
@@ -16,12 +15,9 @@ public:
     void end() override;
 
 private:
-    SpriteSheet sh;
-    Sprite s;
+    SpriteSheet m_sh;
+    Sprite m_s;
+
 };
 
 #endif // !TEST_SCENE_H
-
-
-
-

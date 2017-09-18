@@ -1,6 +1,8 @@
 #include "Painter2D.h"
 
+#include <iostream>
 #include <glad\glad.h>
+#include <glm\gtc\matrix_transform.hpp>
 
 #include "../entities/Entity.h"
 #include "../utils/Camera.h"
@@ -27,7 +29,7 @@ void Painter2D::prepare() const
 void Painter2D::draw() const
 {
     unsigned int lastTexture{ 0 };
-    for (Entity* e : Entity::entities)
+    for (Entity* e : Entity::s_entities)
     {
         if (lastTexture != e->getTexture2DID())
         {

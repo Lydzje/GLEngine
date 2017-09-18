@@ -1,13 +1,15 @@
 #include "Entity.h"
 
+#include <iostream>
+#include <glm\gtc\matrix_transform.hpp>
 
-std::vector<Entity*>Entity::entities{};
+std::vector<Entity*>Entity::s_entities{};
 
 Entity::Entity(const glm::vec3& position, const glm::vec3& rotation, const glm::vec2& scale, Sprite* sprite)
     : Drawable2D(sprite), m_position(position), m_rotation(rotation), m_scale(scale),
     m_transformation(glm::mat4())
 {
-    entities.push_back(this);
+    s_entities.push_back(this);
 
     m_transformation = glm::translate(m_transformation, m_position);
     m_transformation = glm::rotate(m_transformation, glm::radians(m_rotation.x), glm::vec3(1, 0, 0));
@@ -22,4 +24,3 @@ Entity::~Entity()
 {
     std::cout << "Entity destroyed!\n";
 }
-

@@ -33,7 +33,7 @@ to use it for now.
 ### Contact
 More info about me can be found on my <a href="https://lydzje.github.io" target="_blank">website</a>.
 
-Contact me if there's any problem via email: lydzjesoftware@gmail.com
+Contact me if there's any problem via email: to.lydzje@gmail.com
 <br>
 <br>
 <br>

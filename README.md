@@ -1,4 +1,4 @@
-# GLEngine (in development) :construction::construction:
+# GLEngine (development paused) :construction::construction:
 GLEngine is an OpenGL game engine that I started working on in summer of 2017. It 
 gonna be open source and free of course, I've put the © symbol while I'm looking for the 
 appropiate license.
